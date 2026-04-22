@@ -1,0 +1,25 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="256"
+  height="256"
+  viewBox="0 0 256 256"
+  fill="none"
+>
+  <rect width="256" height="256" rx="40" fill="black" />
+  <path
+    d="M76 68L34 128L76 188H112L70 128L112 68H76Z"
+    fill="white"
+  />
+  <path
+    d="M180 68H144L186 128L144 188H180L222 128L180 68Z"
+    fill="white"
+  />
+  <rect
+    x="116"
+    y="190.115"
+    width="108"
+    height="24"
+    transform="rotate(-59.4 116 190.115)"
+    fill="white"
+  />
+</svg>
