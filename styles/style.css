@@ -230,18 +230,26 @@
   margin-block: 50px 100px;
 }
 
-.save-zone__inner {
+.save-zone__inner,
+.save_button-wrapper {
   inline-size: var(--save-button-inline-size);
   margin-inline: auto;
 }
 
-.save-button {
+.save-button,
+.save_button {
   inline-size: 100%;
   min-block-size: var(--save-button-block-size);
   padding: 15px 20px;
 }
 
-.dialog {
+.floppy {
+  inline-size: var(--save-icon-size);
+  block-size: var(--save-icon-size);
+}
+
+.dialog,
+.modal {
   max-inline-size: calc(100% - 2rem);
   padding: 0;
   border: none;
@@ -249,7 +257,8 @@
   background: transparent;
 }
 
-.dialog[open] {
+.dialog[open],
+.modal[open] {
   display: grid;
   inline-size: var(--dialog-inline-size);
   gap: 30px;
@@ -258,11 +267,13 @@
   border: 2px solid var(--accent-color);
 }
 
-.dialog::backdrop {
+.dialog::backdrop,
+.modal::backdrop {
   background-color: rgb(0 0 0 / 0.75);
 }
 
-.dialog__content {
+.dialog__content,
+.dialog-text-wrapper {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 20px;
@@ -275,7 +286,8 @@
   color: var(--accent-color);
 }
 
-.dialog__title {
+.dialog__title,
+.modal__title {
   font-family: var(--accent-font-family);
   font-size: 14px;
   font-weight: 400;
@@ -283,7 +295,8 @@
   text-transform: uppercase;
 }
 
-.dialog__button {
+.dialog__button,
+.modal__button {
   inline-size: 100%;
   min-block-size: 38px;
 }

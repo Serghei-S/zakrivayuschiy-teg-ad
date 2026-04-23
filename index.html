@@ -310,15 +310,15 @@
       </section>
     </main>
 
-    <footer class="save-zone">
+    <footer class="save-zone save_button-wrapper">
       <div class="save-zone__inner">
         <button
-          class="button save-button"
+          class="button save-button save_button"
           type="button"
-          onclick="document.getElementById('memory-dialog').showModal()"
-          aria-controls="memory-dialog"
+          onclick="window['dialog'].showModal()"
+          aria-controls="dialog"
         >
-          <svg class="button__icon button__icon--save" aria-hidden="true">
+          <svg class="button__icon button__icon--save floppy" aria-hidden="true">
             <use href="./svg/floppy.svg#floppy"></use>
           </svg>
           <span class="button__text">Сохранить на память</span>
@@ -326,19 +326,19 @@
       </div>
     </footer>
 
-    <dialog class="dialog" id="memory-dialog">
-      <div class="dialog__content">
-        <svg class="dialog__icon" aria-hidden="true">
+    <dialog class="dialog modal" id="dialog">
+      <div class="dialog__content dialog-text-wrapper">
+        <svg class="dialog__icon floppy" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
-        <p class="dialog__title">Вставьте дискету, чтобы продолжить</p>
+        <h2 class="dialog__title modal__title">Вставьте дискету, чтобы продолжить</h2>
       </div>
       <button
-        class="button dialog__button"
+        class="button save-button dialog__button modal__button"
         type="button"
-        onclick="document.getElementById('memory-dialog').close()"
+        onclick="window['dialog'].close()"
       >
-        <span class="button__text">ОК</span>
+        <span class="button__text">Ок</span>
       </button>
     </dialog>
 
