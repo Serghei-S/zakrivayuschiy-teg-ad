@@ -3,11 +3,13 @@ const dialogOpenButton = document.querySelector('[data-dialog-open]');
 const dialogCloseButton = document.querySelector('[data-dialog-close]');
 
 if (dialog && dialogOpenButton && dialogCloseButton) {
-  dialogOpenButton.addEventListener('click', () => {
+  dialogOpenButton.addEventListener('click', (event) => {
+    event.preventDefault();
     dialog.showModal();
   });
 
-  dialogCloseButton.addEventListener('click', () => {
+  dialogCloseButton.addEventListener('click', (event) => {
+    event.preventDefault();
     dialog.close();
   });
 }
