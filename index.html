@@ -313,10 +313,9 @@
     <footer class="save-zone save_button-wrapper">
       <div class="save-zone__inner">
         <button
-          class="button save-button save_button"
+          class="button save-button save_button button__popup-open"
           type="button"
-          onclick="window['dialog'].showModal()"
-          aria-controls="dialog"
+          aria-controls="popup-id"
         >
           <svg class="button__icon button__icon--save floppy" aria-hidden="true">
             <use href="./svg/floppy.svg#floppy"></use>
@@ -326,17 +325,17 @@
       </div>
     </footer>
 
-    <dialog class="dialog modal" id="dialog">
-      <div class="dialog__content dialog-text-wrapper">
+    <dialog class="dialog modal popup" id="popup-id">
+      <div class="dialog__content dialog-text-wrapper popup__text-open">
         <svg class="dialog__icon floppy" aria-hidden="true">
           <use href="./svg/floppy.svg#floppy"></use>
         </svg>
         <h2 class="dialog__title modal__title">Вставьте дискету, чтобы продолжить</h2>
       </div>
       <button
-        class="button save-button dialog__button modal__button"
+        class="button save-button dialog__button modal__button button__popup-close"
         type="button"
-        onclick="window['dialog'].close()"
+        aria-controls="popup-id"
       >
         <span class="button__text">Ок</span>
       </button>

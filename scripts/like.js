@@ -8,34 +8,68 @@
 Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
 */
 
+const popup = document.getElementById('popup-id');
+const openButton = document.querySelector('.button__popup-open');
+const closeButton = document.querySelector('.button__popup-close');
 const likeHeartArray = document.querySelectorAll('.like-icon');
 const likeButtonArray = document.querySelectorAll('.card__like-button');
 const iconButtonArray = document.querySelectorAll('.card__icon-button');
 
+if (openButton && popup) {
+  openButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    popup.showModal();
+  });
+}
+
+if (closeButton && popup) {
+  closeButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    popup.close();
+  });
+}
+
+document.addEventListener('submit', (event) => {
+  event.preventDefault();
+});
+
 iconButtonArray.forEach((iconButton, index) => {
-  iconButton.onclick = () =>
+  iconButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
     toggleIsLiked(likeHeartArray[index], likeButtonArray[index]);
+  });
 });
 
 likeButtonArray.forEach((button, index) => {
-  button.onclick = () => toggleIsLiked(likeHeartArray[index], button);
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleIsLiked(likeHeartArray[index], button);
+  });
 });
 
 function toggleIsLiked(heart, button) {
+  if (!heart || !button) {
+    return;
+  }
+
   heart.classList.toggle('is-liked');
   setButtonText(heart, button);
 }
 
 function setButtonText(heart, button) {
-  if ([...heart.classList].includes('is-liked')) {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Unlike'),
-      500
-    );
-  } else {
-    setTimeout(
-      () => (button.querySelector('.button__text').textContent = 'Like'),
-      500
-    );
+  const textElement = button.querySelector('.button__text');
+
+  if (!textElement) {
+    return;
   }
+
+  setTimeout(() => {
+    textElement.textContent = heart.classList.contains('is-liked')
+      ? 'Unlike'
+      : 'Like';
+  }, 500);
 }
