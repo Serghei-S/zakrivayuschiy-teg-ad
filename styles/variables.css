@@ -1,42 +1,16 @@
+/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font-family: "Inter", Arial, sans-serif;
-  --accent-font-family: "PressStart2P", "Courier New", monospace;
-
-  --card-text-weight: 400;
-  --card-title-weight: 700;
-
-  --accent-color: #000;
-  --surface-color: #fff;
-  --button-contrast-color: #fff;
-  --label-stroke-color: #fff;
-  --contour-color: #000;
-  --animation-fill-color: #f00;
-  --page-background-color: #fff;
-
-  --body-font-size: 18px;
-  --logo-font-size: clamp(3.063rem, 2.71rem + 1.5vw, 4.063rem);
-  --subtitle-font-size: clamp(0.875rem, 0.676rem + 0.85vw, 1.438rem);
-
-  --section-inline-size: clamp(23.438rem, 48.4vw, 43.75rem);
-  --header-block-size: clamp(20.188rem, 18.875rem + 5.6vw, 23rem);
-  --cards-gap: 50px;
-  --save-button-inline-size: clamp(19.125rem, 18.487rem + 2.723vw, 20.938rem);
-  --save-button-block-size: 55px;
-  --save-icon-size: 21px;
-  --dialog-inline-size: clamp(21.313rem, 20.727rem + 1.22vw, 22.063rem);
-  --dialog-padding-inline: 30px;
-  --dialog-padding-block: 30px;
-
-  --page-background:
-    repeating-linear-gradient(
-      to right,
-      #d3d3d3 0 2px,
-      transparent 2px 4px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      #d3d3d3 0 2px,
-      transparent 2px 4px
-    ),
-    linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
+    --main-font: "inter-Variable", sans-serif;
+    --accent-font: "PresStart2P", sans-serif;
+    --font-weight-bold: 700;
+    --font-weight-regular: 400;
+    --themes-background: #FFFFFF;
+    --themes-main-color: #000000;
+    --background-color: repeating-linear-gradient(to right, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0, #d3d3d3 2px, transparent 2px, transparent 4px ),
+    linear-gradient(to bottom, #e7e7e7, #1a1a1a);
+    --heart-contour: black;
+    --heart-main-body:#FF0000;
+    --heart-core:white;
+    --heart-sparks: #FF0000;
 }
